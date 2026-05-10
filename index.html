@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Machine Learning Flashcards</title>
+  <meta name="description" content="Responsive flashcard UI generated from an Excel machine learning topics workbook." />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="top-nav" aria-label="Main navigation">
+      <a class="brand" href="#/">
+        <span class="brand-icon">ML</span>
+        <span><strong>Machine Learning</strong><small>Flashcards</small></span>
+      </a>
+      <div class="nav-actions">
+        <a class="ghost-button" href="assets/ml_topics_detailed_completed.xlsx" download>Download Excel</a>
+        <button id="themeToggle" class="icon-button" type="button" aria-label="Toggle theme">◐</button>
+      </div>
+    </nav>
+    <section class="hero">
+      <p class="eyebrow">Excel-powered study guide</p>
+      <h1>Explore ML topics as responsive flashcards.</h1>
+      <p>Start with a heading, open its subtopics, then review definitions, task type, use cases, workflow, and limitations.</p>
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Search headings, subtopics, use cases, limitations..." aria-label="Search flashcards" />
+      </div>
+    </section>
+  </header>
+
+  <main class="app-shell">
+    <aside class="sidebar" aria-label="Topic navigation">
+      <div class="sidebar-header"><strong>Topics</strong><button id="clearSearch" class="text-button" type="button">Clear</button></div>
+      <div id="sidebarList" class="sidebar-list"></div>
+    </aside>
+    <section class="content-panel" aria-live="polite">
+      <div id="breadcrumbs" class="breadcrumbs"></div>
+      <div id="app"></div>
+    </section>
+  </main>
+
+  <footer class="footer"><span>Built for GitHub Pages. Data source: <code>data.json</code>.</span></footer>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
